@@ -1,0 +1,129 @@
+$base-color: #6f0189;
+$text-color: #403d3a;
+$background: #d6d6d6;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  height: 100vh;
+  color: $text-color;
+  background-image: linear-gradient(to top left, #b6009e 0%, #19037c 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#questions-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#game-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 920px) {
+    flex-direction: column-reverse;
+  }
+}
+.question-page {
+  margin: 1rem;
+  width: 42rem;
+  padding: 1.5rem;
+  background-color: $background;
+  border-radius: 9px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  @media screen and (max-width: 920px) {
+    width: 90%;
+  }
+  h1 {
+    text-align: center;
+    padding: 1rem;
+  }
+  h2 {
+    padding-bottom: 1rem;
+  }
+  a {
+    color: #6f0189;
+    font-size: 1.2rem;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.game-page {
+  width: 19rem;
+  height: 19rem;
+  font-size: 1.75rem;
+  background-color: $background;
+  border-radius: 9px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#question-table {
+  background-color: $base-color;
+  td {
+    padding: 0.5rem;
+    background-color: $background;
+  }
+  @media screen and (max-width: 920px) {
+    background-color: $background;
+    td {
+      display: block;
+    }
+    tr {
+      display: block;
+      border-top: 2px solid $base-color;
+    }
+  }
+}
+
+#game-field {
+  font-size: 3.5rem;
+  color: $base-color;
+  background-color: $base-color;
+  td {
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: $background;
+    border: 2px solid $base-color;
+    &:hover {
+      background-color: #c9c9c9;
+    }
+  }
+}
+
+#restart-button {
+  display: none;
+  font-weight: 600;
+  color: $text-color;
+  font-size: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: none;
+  border-radius: 9px;
+  border: 3px solid $base-color;
+  transition: all 0.2s;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  &:active {
+    transform: translate(0, 3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+}
